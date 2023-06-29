@@ -1,9 +1,9 @@
 import React from 'react'
 import Navbar from '../components/Navbar'
 import Banner from '../components/Banner'
-//import Footer from '../components/Footer'
+import Footer from '../components/Footer'
 import Image from '../assets/img/nthc-1.png'
-//import Client from '../components/Client'
+import Client from '../components/Client'
 import { Link } from 'react-router-dom'
 
 const Home = () => {
@@ -32,8 +32,8 @@ All necessary documentations are facilitated by our team of experts at Lands and
           </div>
         </div>
       </div>
-      {/* <Client/>
-      <Footer/> */}
+      <Client/>
+      <Footer/>
     </>
     
   )

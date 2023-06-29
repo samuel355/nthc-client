@@ -16,17 +16,17 @@ const Footer = () => {
   //   }
   // },[error])
 
-  // const onFormSubmit = (e) => {
-  //   e.preventDefault()
-  //   if(email === ''){
-  //     return toast.error("Please Enter your email address")
-  //   }
-  //   let formValue = {
-  //     email
-  //   }
-  //   dispatch(subscribeTNL({formValue, toast}))
-  //   setEmail('')
-  // }
+  const onFormSubmit = (e) => {
+    e.preventDefault()
+    if(email === ''){
+      return toast.error("Please Enter your email address")
+    }
+    let formValue = {
+      email
+    }
+    //dispatch(subscribeTNL({formValue, toast}))
+    setEmail('')
+  }
   
   const onFFormSubmit = (e) => {
     e.preventDefault()
@@ -51,10 +51,10 @@ const Footer = () => {
                   Subscribe to our weekly Newsletter and receive discounted offers of our services directly into your inbox{" "}
                 </p>
                 <form action="" onSubmit={onFormSubmit}>
-                  <div>
+                  {/* <div>
                     <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} className='form-control' placeholder="Your email Address" />
                     <input type="submit" disabled={loading ? true : false} value='Submit' style={{marginTop: '10px', padding: 8, backgroundColor: '#fda94f', cursor: 'pointer', color: 'white'}} />
-                  </div>
+                  </div> */}
                 </form>
               </div>
             </div>
