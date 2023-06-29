@@ -16,16 +16,17 @@ import store from './redux/store';
 import { Provider } from 'react-redux';
 
 import App from './App';
+import PurchasePlot from './pages/PurchasePlot';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
   },
-  // {
-  //   path: "/purchase",
-  //   element: <PurchasePlot />,
-  // },
+  {
+    path: "/purchase",
+    element: <PurchasePlot />,
+  },
   // {
   //   path: "/about-us",
   //   element: <About />,
