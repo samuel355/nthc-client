@@ -12,6 +12,9 @@ import {
   Link,
 } from "react-router-dom";
 
+import store from './redux/store';
+import { Provider } from 'react-redux';
+
 import App from './App';
 
 const router = createBrowserRouter([
@@ -62,8 +65,10 @@ function NoMatch() {
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <ToastContainer />
-    <RouterProvider router={router} />
+    <Provider store={store}>
+      <ToastContainer />
+      <RouterProvider router={router} />
+    </Provider>
   </React.StrictMode>
 );
 
