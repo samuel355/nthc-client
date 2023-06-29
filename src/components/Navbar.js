@@ -1,13 +1,13 @@
 import React from 'react'
 import { Link, useLocation} from 'react-router-dom'
 import logo from '../assets/img/logo.png'
-// import { logout } from '../redux/features/UserSlice'
-// import { useSelector, useDispatch } from 'react-redux'
+import { logout } from '../redux/features/UserSlice'
+import { useSelector, useDispatch } from 'react-redux'
 
 const Navbar = () => {
   const loc = useLocation();
-  //const dispatch = useDispatch()
-  //const {user} = useSelector((state) => ({...state.user}))
+  const dispatch = useDispatch()
+  const {user} = useSelector((state) => ({...state.user}))
 
   return (
     <div>
@@ -34,15 +34,15 @@ const Navbar = () => {
               </div>
               <div className="nav-right-part nav-right-part-mobile">
                 {
-                  // !user ? (
-                  //   <Link className="btn btn-yellow text-center" to="/login">
-                  //     LOGIN
-                  //   </Link>
-                  // ) : (
-                  //     <Link onClick={() => dispatch(logout())}  className="btn btn-yellow text-center">
-                  //       LOGOUT
-                  //     </Link>
-                  // )
+                  !user ? (
+                    <Link className="btn btn-yellow text-center" to="/login">
+                      LOGIN
+                    </Link>
+                  ) : (
+                      <Link onClick={() => dispatch(logout())}  className="btn btn-yellow text-center">
+                        LOGOUT
+                      </Link>
+                  )
                 }
                 
               </div>
@@ -64,15 +64,15 @@ const Navbar = () => {
               </div>
               <div className="nav-right-part nav-right-part-desktop readeal-top align-items-center">
                 {
-                  // !user ? (
-                  //   <Link className="btn btn-yellow text-center" to="/login">
-                  //     LOGIN
-                  //   </Link>
-                  // ) : (
-                  //     <Link onClick={() => dispatch(logout())}  className="btn btn-yellow text-center">
-                  //       LOGOUT
-                  //     </Link>
-                  // )
+                  !user ? (
+                    <Link className="btn btn-yellow text-center" to="/login">
+                      LOGIN
+                    </Link>
+                  ) : (
+                      <Link onClick={() => dispatch(logout())}  className="btn btn-yellow text-center">
+                        LOGOUT
+                      </Link>
+                  )
                 }
               </div>
             </div>

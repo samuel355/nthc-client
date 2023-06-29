@@ -17,6 +17,11 @@ import { Provider } from 'react-redux';
 
 import App from './App';
 import PurchasePlot from './pages/PurchasePlot';
+import About from './pages/About';
+import Contact from './pages/Contact';
+import Login from './pages/Login';
+import EditPlot from './pages/EditPlot';
+import Navbar from './components/Navbar';
 
 const router = createBrowserRouter([
   {
@@ -27,22 +32,22 @@ const router = createBrowserRouter([
     path: "/purchase",
     element: <PurchasePlot />,
   },
-  // {
-  //   path: "/about-us",
-  //   element: <About />,
-  // },
-  // {
-  //   path: "/contact",
-  //   element: <Contact />
-  // },
-  // {
-  //   path: "/login",
-  //   element: <Login />
-  // },
-  // {
-  //   path: '/edit/:id',
-  //   element: <EditPlot />
-  // },
+  {
+    path: "/about-us",
+    element: <About />,
+  },
+  {
+    path: "/contact",
+    element: <Contact />
+  },
+  {
+    path: "/login",
+    element: <Login />
+  },
+  {
+    path: '/edit/:id',
+    element: <EditPlot />
+  },
   {
     path: "*",
     element: <NoMatch />,
@@ -54,10 +59,13 @@ const router = createBrowserRouter([
 function NoMatch() {
   return (
     <div id='error-page'>
-      <h2>Nothing to see here!</h2>
-      <p>
-        <Link to="/">Go to the home page</Link>
-      </p>
+      <Navbar />
+      <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', height: '50vh',}}>
+        <h2>Nothing to see here!</h2>
+        <p>
+          <Link to="/">Go to the home page</Link>
+        </p>
+      </div>
     </div>
   );
 }

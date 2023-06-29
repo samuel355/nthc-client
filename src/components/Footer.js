@@ -1,20 +1,20 @@
 import React, { useEffect, useState } from 'react'
 import {toast} from 'react-toastify'
 import apartImg from '../assets/img/feature/1.png'
-// import { useDispatch, useSelector } from 'react-redux'
-// import { subscribeTNL } from '../redux/features/ContactUsSlice'
+import { useDispatch, useSelector } from 'react-redux'
+import { subscribeTNL } from '../redux/features/ContactUsSlice'
 
 const Footer = () => {
   const [email, setEmail] = useState('')
   const [Femail, setFEmail] = useState('')
-  // const dispatch = useDispatch()
-  // const {error, loading} = useSelector((state) => ({...state.contactUs}))
+  const dispatch = useDispatch()
+  const {error, loading} = useSelector((state) => ({...state.contactUs}))
 
-  // useEffect(() => {
-  //   if(error){
-  //     return toast.error(error)
-  //   }
-  // },[error])
+  useEffect(() => {
+    if(error){
+      return toast.error(error)
+    }
+  },[error])
 
   const onFormSubmit = (e) => {
     e.preventDefault()
@@ -24,7 +24,7 @@ const Footer = () => {
     let formValue = {
       email
     }
-    //dispatch(subscribeTNL({formValue, toast}))
+    dispatch(subscribeTNL({formValue, toast}))
     setEmail('')
   }
   
@@ -36,7 +36,7 @@ const Footer = () => {
     let formValue = {
       Femail
     }
-    //dispatch(subscribeTNL({formValue, toast}))
+    dispatch(subscribeTNL({formValue, toast}))
     setFEmail('')
   }
 
@@ -51,10 +51,10 @@ const Footer = () => {
                   Subscribe to our weekly Newsletter and receive discounted offers of our services directly into your inbox{" "}
                 </p>
                 <form action="" onSubmit={onFormSubmit}>
-                  {/* <div>
+                  <div>
                     <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} className='form-control' placeholder="Your email Address" />
                     <input type="submit" disabled={loading ? true : false} value='Submit' style={{marginTop: '10px', padding: 8, backgroundColor: '#fda94f', cursor: 'pointer', color: 'white'}} />
-                  </div> */}
+                  </div>
                 </form>
               </div>
             </div>
