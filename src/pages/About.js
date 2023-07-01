@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import Image from '../assets/img/city/2.png'
+import Image from '../assets/img/banner/3dbuilding.jpg'
 import Navbar from '../components/Navbar'
 import BreadCrumb from '../components/BreadCrumb'
 import Footer from '../components/Footer'
